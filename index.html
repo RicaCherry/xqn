@@ -1,0 +1,1057 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        .NIE-topBar-include {
+            height: 655px;
+            background-color: #abcdef;
+        }
+    </style>
+    <link rel="stylesheet" href="CSS/global.css"/>
+    <link rel="stylesheet" href="CSS/index.css"/>
+    <script src="JS/jquery-1.12.4.js"></script>
+    <script src="JS/animate.js"></script>
+    <script src="JS/index.js"></script>
+    <script>
+        $(function () {
+            $(".list2>li>a").mouseenter(function () {
+                $(this).stop(true, true);
+                $(this).animate({
+                    top: -15,
+                }, 500)
+            })
+            $(".list2 li a").mouseleave(function () {
+                $(this).animate({
+                    top: 0,
+                }, 100)
+            })
+            $(".list1 li a").mouseenter(function () {
+                $(this).stop(true, true);
+                $(this).animate({
+                    top: -15,
+                }, 500)
+            })
+            $(".list1 li a").mouseleave(function () {
+                $(this).animate({
+                    top: 0,
+                }, 100)
+            })
+                  var $race_list= $(".race_list").children();
+                    console.log($(".race_list").children());
+                       $(".race_nav").children("li").mouseenter(function () {
+                           var index=$(this).index();
+                           switch (index){
+                               case 0:
+                                   $(".race_list").css("background","url(images/mz-f_f6132ea.png)") ;
+                                   break;
+                               case 1:
+                                   $(".race_list").css("background","url(images/duanhen-f_458b4ef.png)") ;
+                                   break;
+                               case 2:
+                                   $(".race_list").css("background","url(images/yishi-f_e659f5a.png)") ;
+                                   break;
+                               case 3:
+                                   $(".race_list").css("background","url(images/yr-f_4373820.png)") ;
+                                   break;
+                               case 4:
+                                   $(".race_list").css("background","url(images/jingang-f_4888c25.png)") ;
+                                   break;
+                               case 5:
+                                   $(".race_list").css("background","url(images/ss-f_3cceb10.png)") ;
+                                   break;
+                               case 6:
+                                   $(".race_list").css("background","url(images/ss-f_3cceb10.png)") ;
+                                   break;
+                               case 7:
+                                   $(".race_list").css("background","url(images/hh-f_778c1d6.png)") ;
+                                   break;
+                               case 8:
+                                   $(".race_list").css("background","url(images/xk-m_7e2811e.png)") ;
+                                   break;
+                               case 9:
+                                   $(".race_list").css("background","url(images/fs-m_27a0320.png)") ;
+                                   break;
+                           }
+                           $race_list.eq(index).slideDown();
+                           $race_list.eq(index).siblings().hide();
+                       })
+                    var box = document.getElementById("memberbox");
+                    var lis = box.getElementsByTagName("li");
+                    for (var i = 0; i < lis.length; i++) {
+                        console.log(lis.length);
+                        var li = lis[i];//每一个li
+                        //添加背景图
+                        li.style.backgroundImage = "url(images/m" + (i + 1) + ".png)";
+                        //通过JS重新摆放每一个li
+                        li.style.left = (i * 100) + "px";
+                        //给每一个li注册鼠标经过事件
+                        li.index = i;//给每个li绑定自定义属性 把索引号放进去
+                        li.onmouseover = function () {
+                            //让每个li的left值间隔100
+                            for (var j = 0; j < lis.length; j++) {
+                                var li = lis[j];
+                                //不同的li处理方式不同 设置每一个li的时候要判断
+                                //如果是当前li以及他前面的要跑到左侧
+                                //如果是当前li后面的 要跑到右侧
+                                if (li.index <= this.index) {
+                                    //li.style.left = (j * 100) + "px";//不是直接设置而是动画效果
+                                    animate2(li, {"left": j * 100});
+                                } else {
+                                    //当前li后面的li
+                                    animate2(li, {"left": j * 100 + 400});
+                                }
+                            }
+                        };
+                    }
+                    box.onmouseout = function () {
+                        for (var i = 0; i < lis.length; i++) {
+                            animate(lis[i], {"left": i * 100});
+                        }
+                    };
+
+                    }
+            )
+    </script>
+</head>
+<body>
+<!--主体部分开始-->
+<!--背景图-->
+<div id="outbg">
+    <div id="bg">
+        <div id="bg2">
+            <!--导航栏-->
+            <div class="topnav ">
+                <!--<div class="navbg"></div>-->
+                <ul id="navbar" class="g-clr clearfix">
+                    <li>
+                        <a id="nav_home" href="#" title="新倩女幽魂官方网站"><span>首页</span></a>
+                    </li>
+                    <li>
+                        <a id="nav_news" href="son/newss/index.html" target="_blank"><span>新闻公告</span></a>
+
+                        <div class="subnav">
+                            <a href="#" target="_blank">最新新闻</a>
+                            <a href="#" target="_blank">热点新闻</a>
+                            <a href="#" target="_blank">官方公告</a>
+                            <a href="#" target="_blank" class="jlast">主题活动</a>
+                        </div>
+                    </li>
+                    <li>
+                        <a id="nav_download" href="son/xzzq/downhtml/downindex.html" target="_blank"><span>下载专区</span></a>
+                        <div class="subnav">
+                            <a href="#" target="_blank">游戏下载</a>
+                            <a href="#" target="_blank">注册帐号</a>
+                            <a href="#" target="_blank" class="jlast">领取礼包</a>
+                        </div>
+                    </li>
+                    <li>
+                        <a id="nav_guide" href="son/yxzl/gamedata.html" target="_blank"><span>游戏资料</span></a>
+
+                        <div class="subnav">
+                            <a href="#" target="_blank">新手宝典</a>
+                            <a href="#" target="_blank">职业门派</a>
+                            <a href="#" target="_blank">主角剧情</a>
+                            <a href="#" target="_blank" class="jlast">任务攻略</a>
+                        </div>
+                    </li>
+                    <li>
+                        <a id="nav_video" href="son/stsy/苑智媛 王鹏项目/十一项目/index.html" target="_blank"><span>视听盛宴</span></a>
+
+                        <div class="subnav">
+                            <a href="#" target="_blank">精彩视频</a>
+                            <a href="#" target="_blank">原声音乐</a>
+                            <a href="#" target="_blank">游戏图鉴</a>
+                            <a href="#" target="_blank" class="jlast">二次元站</a>
+                        </div>
+                    </li>
+                    <li>
+                        <a id="nav_service" href="#" title="新倩女幽魂客服专区"><span>客户服务</span></a>
+
+                        <div class="subnav">
+                            <a href="#" target="_blank">自助百宝箱</a>
+                            <a href="#" target="_blank">帐号保护</a>
+                            <a href="#" target="_blank">帐号安全</a>
+                            <a href="#" target="_blank">角色查询</a>
+                            <a href="#" target="_blank" class="jlast">心易服务</a>
+                        </div>
+                    </li>
+                    <li>
+                        <a id="nav_communicate"><span>玩家交流</span></a>
+
+                        <div class="subnav">
+                            <a id="topmenu_weixin" rel="aside_weixin">官方微信</a>
+                            <a href="#" target="_blank" id="topmenu_weibo" rel="aside_weibo" class="jlast">官方微博</a>
+                        </div>
+                    </li>
+                    <li>
+                        <a id="nav_bbs" href="son/gflt/forum/froum.html" target="_blank" title="新倩女幽魂官方论坛"><span>官方论坛</span></a>
+
+                        <div class="subnav">
+                            <div class="luntan_code"></div>
+                        </div>
+                    </li>
+                </ul>
+
+            </div>
+            <!--导航栏结束-->
+            <!--logo部分-->
+            <div class="header">
+                <a href="#" class="thide logo" target="_blank">《新倩女幽魂》</a>
+
+                <div class="thide slogan"></div>
+                <a href="#" class="yybtn" rel="regpop" id="yybten">今日公测</a>
+            </div>
+            <!--logo结束-->
+        </div>
+    </div>
+    <div id="content" class="g-clr">
+        <div class="fl" id="content-left">
+            <div class="content-box" id="linksbox">
+                <a href="http://xqn.163.com/download/" id="links_download" target="_blank" class="g-thide"><span></span></a>
+                <ul class="g-clr list2">
+                    <li>
+                        <a href="http://xqn.163.com/reg/" target="_blank"><i class="icon icon8"></i><em>快速注册</em></a>
+                    </li>
+                    <li>
+                        <a href="http://ecard.163.com/script/index?platform=qn" id="links_pay" target="_blank"><i
+                                class="icon icon9"></i><em>充值中心</em></a>
+                    </li>
+                    <li>
+                        <a href="http://xqn.163.com/newbie/index.html" target="_blank"><i
+                                class="icon icon10"></i><em>新手宝典</em></a>
+                    </li>
+                    <li>
+                        <a href="http://qn2.gm.163.com/user_help.html?paper_id=696" target="_blank"><i
+                                class="icon icon11"></i><em>帐号保护</em></a>
+                    </li>
+                    <li>
+                        <a href="http://xqn.163.com/libao/" target="_blank"><i class="icon icon12"></i><em>领取礼包</em></a>
+                    </li>
+                    <li>
+                        <a href="http://xqn.cbg.163.com/" target="_blank"><i class="icon icon13"></i><em>藏宝阁</em></a>
+                    </li>
+                </ul>
+            </div>
+            <div class="content-box" id="quickbox">
+                <a href="http://qnm.163.com/" title="《倩女幽魂》官方手游" target="_blank" id="btns_mobile"><em></em><i>《倩女幽魂》<br>官方手游</i></a>
+                <ul class="list1">
+                    <li>
+                        <a href="http://qnyh.163.com/" target="_blank" id="quickbox_comic" title="漫画倩女幽魂"><i
+                                class="icon icon14"></i><em>漫画倩女幽魂</em></a>
+                    </li>
+                    <li>
+                        <a href="javascript:void(0);" rel="aside_weixin" target="_blank" id="quickbox_weixin"
+                           title="倩女官方微信"><i class="icon icon15"></i><em>倩女官方微信</em></a>
+                    </li>
+                    <li>
+                        <a href="http://weibo.com/163qnyh/" rel="aside_weibo" target="_blank" id="quickbox_weibo"
+                           title="倩女官方微博"><i class="icon icon16"></i><em>倩女官方微博</em></a>
+                    </li>
+                </ul>
+                <ul class="g-clr list2">
+                    <li><a href="http://xqn.163.com/features/video.html" target="_blank" title="新倩女幽魂游戏视频"><i
+                            class="icon icon17"></i><em>视 频</em></a></li>
+                    <li><a href="http://xqn.163.com/features/vision.html" target="_blank" title="新倩女幽魂游戏图赏"><i
+                            class="icon icon19"></i><em>图 赏</em></a></li>
+                    <li><a href="http://xqn.163.com/features/music.html" target="_blank" title="新倩女幽魂游戏音乐"><i
+                            class="icon icon18"></i><em>音 乐</em></a></li>
+                    <li><a href="http://xqn.163.com/tongren/" target="_blank" title="新倩女幽魂游戏同人"><i
+                            class="icon icon20"></i><em>同 人</em></a></li>
+                </ul>
+            </div>
+            <div class="content-box" id="servicebox">
+                <div id="servicebox-info">
+                    <ul class="g-clr">
+                        <li><a href="http://xqn.163.com/guide/yxjs/zhaq.html" target="_blank">帐号安全</a></li>
+                        <li><a href="http://xqn.gm.163.com/user_help.html?paper_id=688" target="_blank">帐号修复</a></li>
+                        <li><a href="http://xqn.gm.163.com/user_help.html?paper_id=696" target="_blank">帐号保护</a></li>
+                        <li><a href="http://xqn.gm.163.com/user_help.html?paper_id=634" target="_blank">防沉迷查询</a></li>
+                        <li><a href="http://xqn.gm.163.com/" target="_blank">客服专区</a></li>
+                        <li><a href="http://box.gm.163.com/?pname=qn" target="_blank">自助百宝箱</a></li>
+                    </ul>
+                    <div class="g-clr" id="servicebox-phone">
+                        <i class="icon icon21"></i>
+                        <em>服务电话：<br>0571-26201177</em>
+                    </div>
+                </div>
+                <ul class="g-clr" id="servicebox-link">
+                    <li><a href="http://xqn.zhidao.163.com/" target="_blank" id="servicebox-link1">倩女知道</a></li>
+                    <li><a href="http://nb.163.com/privilege_5.html" target="_blank" id="servicebox-link2">网易游戏特权</a>
+                    </li>
+                    <li><a href="http://gs.163.com/" target="_blank" id="servicebox-link3">网易游戏会员</a></li>
+                    <li><a href="http://xqn.163.com/2014/campus/" target="_blank" id="servicebox-link4">高校玩家计划</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="fl" id="content-center">
+            <div class="content-box" id="hotlinkbox">
+                <div id="hotlinkbox-switch">
+                    <a href="javascript:void(0);" class="current" title="官方">官方</a>
+                    <a href="javascript:void(0);" title="合作">合作</a>
+                </div>
+                <div id="wjactive">
+                    <div id="wjone">
+                        <a href="javascript:;" id="j-off" class="wj-on">官方</a>
+                        <a href="javascript:;" id="j-coo">合作</a>
+                    </div>
+                    <div id="wjtwo">
+                        <div id="j-official">
+                            <div id="j-official1">
+                                <ul style="left: -700px;">
+                                    <li><img src="images/1.jpg" alt=""></li>
+                                    <li><img src="images/2.jpg" alt=""></li>
+                                    <li><img src="images/3.jpg" alt=""></li>
+                                    <li><img src="images/4.jpg" alt=""></li>
+                                    <li><img src="images/5.jpg" alt=""></li>
+                                </ul>
+                            </div>
+                            <ul id="j-official2">
+                                <li class="">国庆盛典</li>
+                                <li class="j-current">新倩女幽魂动画</li>
+                                <li class="">玩家交流会回顾</li>
+                                <li class="">侠侣PK大赛</li>
+                                <li class="">倩女同人大赛</li>
+                            </ul>
+                        </div>
+                        <div id="j-cooperation">
+                            <div id="j-cooperation1">
+                                <ul>
+                                    <li><img src="images/01.jpg" alt=""></li>
+                                    <li><img src="images/02.jpg" alt=""></li>
+                                </ul>
+                            </div>
+                            <ul id="j-cooperation2">
+                                <li class="j-current">国庆去哪儿玩</li>
+                                <li>帮花大作战</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--更多资料开始-->
+            <div class="m_more_info">
+                <div class="m_wrap">
+                    <ul class="m_ul">
+                        <li class="m_li">
+                            <span class="m_title"></span>
+                            <ul class="m_icons">
+                                <li class="fl">
+                                    <span class="m_pic1"></span>
+                                    <p>领取礼包</p>
+                                </li>
+                                <li class="fl">
+                                    <span class="m_pic2"></span>
+                                    <p>探索准备</p>
+                                </li>
+                                <li class="fl">
+                                    <span class="m_pic3"></span>
+                                    <p>入门指南</p>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="m_li br_0">
+                            <span class="m_title2"></span>
+                            <ul>
+                                <li><a href="#">快速升级</a></li>
+                                <li><a href="#">贸易指南</a></li>
+                                <li><a href="#">三界伙伴</a></li>
+                                <li><a href="#">装备介绍</a></li>
+                                <li><a href="#">灵兽系统</a></li>
+                                <li><a href="#">坐骑系统</a></li>
+                            </ul>
+                        </li>
+                        <li class="m_li bb_0">
+                            <span class="m_title3">
+                                <ul>
+                                    <li><a href="#">帮会联赛</a></li>
+                                    <li><a href="#">关于校场</a></li>
+                                    <li><a href="#">寇岛围攻</a></li>
+                                    <li><a href="#">镖行天下</a></li>
+                                    <li><a href="#">宁远觉华</a></li>
+                                    <li class="wangYYright"><a href="#">十世镜</a></li>
+                                    <li class="wangYYleft"><a href="#">京师保卫战</a></li>
+                                    <li class="wangYYleft"><a href="#">京城妖奇谈</a></li>
+
+                                </ul>
+                            </span>
+                        </li>
+                        <li class="m_li br_0 bb_0">
+                            <span class="m_title4">
+                                <ul>
+                                    <li><a href="#">婚姻系统</a></li>
+                                    <li><a href="#">养育系统</a></li>
+                                    <li><a href="#">家园系统</a></li>
+                                    <li><a href="#">生活系统</a></li>
+                                    <li class="wangYYright"><a href="#">雷峰塔</a></li>
+                                    <li><a href="#">海陆空领地</a></li>
+                                    <li><a href="#">主角剧情</a></li>
+                                </ul>
+                            </span>
+                        </li>
+                    </ul>
+                </div>
+                <div class="m_right"></div>
+            </div>
+            <!--更多资料结束-->
+            <div class="content-box" id="careerbox">
+                <div class="block4">
+                    <div class="main">
+                        <ul class="race_nav">
+                            <li>
+                                <a href="javascript:void(0);" data-href=".mz" class="">魅者</a>
+                            </li>
+                            <li>
+                                <a href="javascript:void(0);" class="">刀客</a>
+                                <ul class="drop" style="display: none;">
+                                    <li><a href="javascript:void(0);" class="dk1" data-href=".duanhen"
+                                           style="border-bottom-style: none;"></a></li>
+                                    <li><a href="javascript:void(0);" class="dk2 active" data-href=".cangren"
+                                           style="border-bottom-style: none;"></a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="javascript:void(0);" class="">甲士</a>
+                                <ul class="drop" style="display: none;">
+                                    <li><a href="javascript:void(0);" class="js1" data-href=".zhanhun"
+                                           style="border-bottom-style: none;"></a></li>
+                                    <li><a href="javascript:void(0);" class="js2 active" data-href=".jingang"
+                                           style="border-bottom-style: none;"></a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="javascript:void(0);" data-href=".ss" class="">射手</a>
+                            </li>
+                            <li>
+                                <a href="javascript:void(0);" data-href=".hh" class="">画魂</a>
+                            </li>
+                            <li>
+                                <a href="javascript:void(0);" data-href=".ys" class="">偃师</a>
+                            </li>
+                            <li>
+                                <a href="javascript:void(0);" data-href=".xk" class="">侠客</a>
+                            </li>
+                            <li>
+                                <a href="javascript:void(0);" data-href=".fs" class="">方士</a>
+                            </li>
+                            <li>
+                                <a href="javascript:void(0);" data-href=".yishi" class="">医师</a>
+                            </li>
+                            <li style="margin-right: 0">
+                                <a href="javascript:void(0);" data-href=".yr" class="">异人</a>
+                            </li>
+                        </ul>
+                        <div class="race_list">
+                            <div class="mz race_block cur" style="display: block;">
+                                <div class="name"></div>
+                                <div class="dingwei">职业定位：远程 / 法术 / 控制</div>
+                                <a href="http://xqn.163.com/features/mz.html" target="_blank"
+                                   class="detail_btn">详细&gt;</a>
+                                <div class="leida"></div>
+                                <div class="sex">
+                                    <a href="#"></a>
+                                    <a href="#"></a>
+                                </div>
+                                <div class="male person"></div>
+                                <div class="female person hide"></div>
+                            </div>
+                            <div class="cangren race_block hide" style="display: none;">
+                                <div class="name"></div>
+                                <div class="dingwei">职业定位：近程 / 物理 / 陷阱</div>
+                                <a href="http://xqn.163.com/features/dk.html" target="_blank"
+                                   class="detail_btn">详细&gt;</a>
+                                <div class="leida"></div>
+                                <div class="sex">
+                                    <a href="#"></a>
+                                    <a href="#"></a>
+                                </div>
+                                <div class="male person hide"></div>
+                                <div class="female person"></div>
+                            </div>
+                            <div class="zhanhun race_block hide" style="display: none;">
+                                <div class="name"></div>
+                                <div class="dingwei">职业定位：近程 / 物理 / 将魂</div>
+                                <a href="http://xqn.163.com/features/zhjs.html" target="_blank" class="detail_btn">详细&gt;</a>
+                                <div class="leida"></div>
+                                <div class="sex">
+                                    <a href="#"></a>
+                                    <a href="#"></a>
+                                </div>
+                                <div class="male person"></div>
+                                <div class="female person hide"></div>
+                            </div>
+                            <div class="ss race_block hide" style="display: none;">
+                                <div class="name"></div>
+                                <div class="dingwei">职业定位：远程 / 物理 / 群攻</div>
+                                <a href="http://xqn.163.com/features/ss.html" target="_blank"
+                                   class="detail_btn">详细&gt;</a>
+                                <div class="leida"></div>
+                                <div class="sex">
+                                    <a href="#"></a>
+                                    <a href="#"></a>
+                                </div>
+                                <div class="male person"></div>
+                                <div class="female person hide"></div>
+                            </div>
+                            <div class="hh race_block hide" style="display: none;">
+                                <div class="name"></div>
+                                <div class="dingwei">职业定位：近程 / 法术 / 单攻</div>
+                                <a href="http://xqn.163.com/features/hh.html" target="_blank"
+                                   class="detail_btn">详细&gt;</a>
+                                <div class="leida"></div>
+                                <div class="sex">
+                                    <a href="#"></a>
+                                    <a href="#"></a>
+                                </div>
+                                <div class="male person hide"></div>
+                                <div class="female person "></div>
+                            </div>
+                            <div class="ys race_block hide" style="display: none;">
+                                <div class="name"></div>
+                                <div class="dingwei">职业定位：中程 / 物理 / 召唤</div>
+                                <a href="http://xqn.163.com/features/yans.html" target="_blank" class="detail_btn">详细&gt;</a>
+                                <div class="leida"></div>
+                                <div class="sex">
+                                    <a href="#"></a>
+                                    <a href="#"></a>
+                                </div>
+                                <div class="male person"></div>
+                                <div class="female person hide"></div>
+                            </div>
+                            <div class="xk race_block hide" style="display:none;">
+                                <div class="name"></div>
+                                <div class="dingwei">职业定位：近程 / 物理 / 辅助</div>
+                                <a href="http://xqn.163.com/features/xk.html" target="_blank"
+                                   class="detail_btn">详细&gt;</a>
+                                <div class="leida"></div>
+                                <div class="sex">
+                                    <a href="#"></a>
+                                    <a href="#"></a>
+                                </div>
+                                <div class="male person hide"></div>
+                                <div class="female person "></div>
+                            </div>
+                            <div class="fs race_block hide" style="display: none;">
+                                <div class="name"></div>
+                                <div class="dingwei">职业定位：远程 / 法术 / 群攻</div>
+                                <a href="http://xqn.163.com/features/fs.html" target="_blank"
+                                   class="detail_btn">详细&gt;</a>
+                                <div class="leida"></div>
+                                <div class="sex">
+                                    <a href="#"></a>
+                                    <a href="#"></a>
+                                </div>
+                                <div class="male person"></div>
+                                <div class="female person hide"></div>
+                            </div>
+                            <div class="yishi race_block hide" style="display: none;">
+                                <div class="name"></div>
+                                <div class="dingwei">职业定位：远程 / 法术 / 治疗</div>
+                                <a href="http://xqn.163.com/features/ys.html" target="_blank"
+                                   class="detail_btn">详细&gt;</a>
+                                <div class="leida"></div>
+                                <div class="sex">
+                                    <a href="#"></a>
+                                    <a href="#"></a>
+                                </div>
+                                <div class="male person hide"></div>
+                                <div class="female person "></div>
+                            </div>
+                            <div class="yr race_block hide" style="display: none;">
+                                <div class="name"></div>
+                                <div class="dingwei">职业定位：远程 / 法术 / 召唤</div>
+                                <a href="http://xqn.163.com/features/yr.html" target="_blank"
+                                   class="detail_btn">详细&gt;</a>
+                                <div class="leida"></div>
+                                <div class="sex">
+                                    <a href="#"></a>
+                                    <a href="#"></a>
+                                </div>
+                                <div class="male person" style="display: none;"></div>
+                                <div class="female person hide" style="display: block;"></div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+                <!--This is Git Project From QN2/qn2-fab-pc-20160803new(3684)-->
+            </div>
+            <div class="g-clr content-box" id="memberbox">
+                <a href="http://xqn.163.com/skill/zxgl.html" target="_blank" class="more"><em>更多</em><i
+                        class="icon icon25"></i></a>
+                <ul>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                </ul>
+                <!--stamp:e235739d-958b-40ad-9532-b0fea159ea58,tplId:15506,pageId:19245,tplName:16v3官网首页玩家交流inc-->
+
+            </div>
+        </div>
+        <div class="fl clearfix" id="content-right">
+            <div class="content-box clearfix" id="searchbox">
+                <div class="g-clr" id="qsearch">
+                    <ul class="fl g-clr">
+                        <li><a href="#" target="_blank">服务器查询</a></li>
+                    </ul>
+                    <ul class="fr g-clr">
+                        <li><a href="#" target="_blank">装备</a></li>
+                        <li><a href="#" target="_blank">石之灵</a></li>
+                        <li><a href="#" target="_blank">帮会</a></li>
+                        <li><a href="#" target="_blank">家园</a></li>
+                        <li><a href="#" target="_blank">藏宝阁</a></li>
+                    </ul>
+                </div>
+                <div id="search">
+                    <input id="searchKeyWords" name="qs" value="请输入关键字" type="text"><a class="btn" href="#"
+                                                                                       target="_blank">搜索</a>
+
+                    <div class="clear"></div>
+                    <script type="text/javascript" data-fixed="true">
+                        $(function () {
+                            $("#searchKeyWords").focus(function () {
+                                "请输入关键字" == $(this).val() && $(this).val("")
+                            }).blur(function () {
+                                "" == $(this).val() && $(this).val("请输入关键字")
+                            }),
+                                    $("#search .btn").click(function () {
+                                        return "" == $("#searchKeyWords").val() || "请输入关键字" == $("#searchKeyWords").val() ? (alert("请输入关键字"),
+                                                $("#searchKeyWords").focus(), !1) : ($(this).attr("href", encodeURI("http://so.qn2.163.com/search?qs=" + $("#searchKeyWords").val())), !0)
+                                    })
+                        });
+                    </script>
+                </div>
+            </div>
+            <div class="content-box clearfix" id="newsbox">
+                <div class="newsbox-tab">
+                    <ul id="news">
+                        <li class="on"><a href="#" target="_blank">最新</a></li>
+                        <li><a href="#" target="_blank">消息</a></li>
+                        <li><a href="#" target="_blank">公告</a></li>
+                        <li><a href="#" target="_blank">活动</a></li>
+                        <li><a href="#" target="_blank">热帖</a></li>
+                    </ul>
+                </div>
+                <div class="newsbox-hot">
+                    <p>
+                        <a href="#" target="_blank">九大活动献礼 一笑倾城资料片今日公测 </a><i class="icon icon26"></i>
+                    </p>
+
+                    <p>
+                        <a href="#" target="_blank">剧版《微微》高度还原新倩女网游 </a><i class="icon icon26"></i>
+                    </p>
+                </div>
+                <div class="newsbox-list clearfix">
+                    <div class="tempWrap" style="overflow:hidden; position:relative; width:320px" id="boxs">
+                        <div class="bd"
+                             style="width: 2240px; position: relative; overflow: hidden; padding: 0px; margin: 0px;">
+                            <ul style="float: left; width: 320px;">
+                                <li class="on">
+                                    <span class="date">[09/30]</span>
+                                    <a href="#" target="_blank">
+                                        [新闻]</a> <a title="一曲寄深情 《新倩女幽魂》对唱大赛作品赏" href="#" target="_blank">一曲寄深情
+                                    倩女对唱大赛作品赏 </a>
+                                </li>
+                                <li class="">
+                                    <span class="date">[09/29]</span>
+                                    <a href="#" target="_blank">
+                                        [活动]</a> <a title="穿出与众不同！秋装搭配套餐立省87元" href="#" target="_blank">穿出与众不同！秋装搭配套餐立省87元 </a>
+                                </li>
+                                <li class="">
+                                    <span class="date">[09/29]</span>
+                                    <a href="#" target="_blank">
+                                        [新闻]</a> <a title="本周更新关键词【萌鸡】 动物狂欢秀" href="#" target="_blank">本周更新关键词【萌鸡】
+                                    动物狂欢秀 </a>
+                                </li>
+                                <li class="">
+                                    <span class="date">[09/29]</span>
+                                    <a href="#" target="_blank">
+                                        [公告]</a> <a title="《新倩女幽魂Online》更新公告（版本3.0.58）" href="#" target="_blank">《新倩女幽魂》9月29日更新公告 </a>
+                                </li>
+                                <li class="">
+                                    <span class="date">[09/28]</span>
+                                    <a href="#" target="_blank">
+                                        [新闻]</a> <a title="这些故事有毒，新倩女剧情截图大赛落幕" href="#" target="_blank">这些故事有毒，新倩女剧情截图大赛落幕 </a>
+                                </li>
+                                <li class=""><span class="date">[09/29]</span><a href="javascript:void(0);">[三石精选]</a>
+                                    <a href="#" target="_blank">肝不动了？来条威化饼回回血吧！</a></li>
+                            </ul>
+                            <ul style="float: left; width: 320px;">
+                                <li>
+                                    <span class="date">[09/30]</span>
+                                    <a href="#" target="_blank">
+                                        [新闻]</a> <a title="一曲寄深情 《新倩女幽魂》对唱大赛作品赏" href="#" target="_blank">一曲寄深情
+                                    倩女对唱大赛作品赏 </a>
+                                </li>
+                                <li>
+                                    <span class="date">[09/29]</span>
+                                    <a href="#" target="_blank">
+                                        [新闻]</a> <a title="本周更新关键词【萌鸡】 动物狂欢秀" href="#" target="_blank">本周更新关键词【萌鸡】
+                                    动物狂欢秀 </a>
+                                </li>
+                                <li>
+                                    <span class="date">[09/28]</span>
+                                    <a href="#" target="_blank">
+                                        [新闻]</a> <a title="这些故事有毒，新倩女剧情截图大赛落幕" href="#" target="_blank">这些故事有毒，新倩女剧情截图大赛落幕 </a>
+                                </li>
+                                <li>
+                                    <span class="date">[09/23]</span>
+                                    <a href="#" target="_blank">
+                                        [新闻]</a> <a title="最萌是偃画，新倩女幽魂绘画大赛落幕" href="#" target="_blank">最萌是偃画
+                                    新倩女绘画大赛落幕 </a>
+                                </li>
+                                <li>
+                                    <span class="date">[09/22]</span>
+                                    <a href="#" target="_blank">
+                                        [新闻]</a> <a title="本周更新关键词【孤影】 大漠西风烈" href="#" target="_blank">本周更新关键词【孤影】
+                                    大漠西风烈 </a>
+                                </li>
+                                <li>
+                                    <span class="date">[09/14]</span>
+                                    <a href="#" target="_blank">
+                                        [新闻]</a> <a title="本周更新关键词【团圆】天涯共此时" href="#"
+                                                    target="_blank">本周更新关键词【团圆】天涯共此时 </a>
+                                </li>
+                            </ul>
+                            <ul style="float: left; width: 320px;">
+                                <li>
+                                    <span class="date">[09/29]</span>
+                                    <a href="#" target="_blank">
+                                        [公告]</a> <a title="《新倩女幽魂Online》更新公告（版本3.0.58）" href="#" target="_blank">《新倩女幽魂》9月29日更新公告 </a>
+                                </li>
+                                <li>
+                                    <span class="date">[09/21]</span>
+                                    <a href="#" target="_blank">
+                                        [公告]</a> <a title="《新倩女幽魂Online》更新公告（版本3.0.57）" href="#" target="_blank">《新倩女幽魂》9月22日更新公告 </a>
+                                </li>
+                                <li>
+                                    <span class="date">[09/15]</span>
+                                    <a href="#" target="_blank">
+                                        [公告]</a> <a title="微笑最美 幽梦天使获奖名单公布" href="#" target="_blank">微笑最美
+                                    幽梦天使获奖名单公布 </a>
+                                </li>
+                                <li>
+                                    <span class="date">[09/14]</span>
+                                    <a href="#" target="_blank">
+                                        [公告]</a> <a title="《新倩女幽魂Online》更新公告（版本3.0.56）" href="#" target="_blank">《新倩女幽魂》9月14日更新公告 </a>
+                                </li>
+                                <li>
+                                    <span class="date">[09/08]</span>
+                                    <a href="#" target="_blank">
+                                        [公告]</a> <a title="《新倩女幽魂Online》更新公告（版本3.0.55）" href="#" target="_blank">《新倩女幽魂》9月8日更新公告 </a>
+                                </li>
+                                <li>
+                                    <span class="date">[09/06]</span>
+                                    <a href="#" target="_blank">
+                                        [公告]</a> <a title="9月8日服务器合并投票结果公告" href="#"
+                                                    target="_blank">9月8日服务器合并投票结果公告 </a>
+                                </li>
+                            </ul>
+                            <ul style="float: left; width: 320px;">
+                                <li>
+                                    <span class="date">[09/29]</span>
+                                    <a href="#" target="_blank">
+                                        [活动]</a> <a title="穿出与众不同！秋装搭配套餐立省87元" href="#" target="_blank">穿出与众不同！秋装搭配套餐立省87元 </a>
+                                </li>
+                                <li>
+                                    <span class="date">[09/19]</span>
+                                    <a href="#" target="_blank">
+                                        [活动]</a> <a title="出游新装备get！箱包5折限时抢" href="#"
+                                                    target="_blank">出游新装备get！箱包5折限时抢 </a>
+                                </li>
+                                <li>
+                                    <span class="date">[08/25]</span>
+                                    <a href="#" target="_blank">
+                                        [活动]</a> <a title="网易游戏雷火&amp;盘古校招直播" href="#"
+                                                    target="_blank">网易游戏雷火&amp;盘古校招直播 </a>
+                                </li>
+                                <li>
+                                    <span class="date">[08/04]</span>
+                                    <a href="#" target="_blank">
+                                        [活动]</a> <a title="七夕情人礼7折包邮，玫瑰花盒帮你传情达意" href="#" target="_blank">七夕情人礼7折包邮，玫瑰花盒帮你传情达意 </a>
+                                </li>
+                                <li>
+                                    <span class="date">[07/28]</span>
+                                    <a href="#" target="_blank">
+                                        [活动]</a> <a title="七夕没“礼”不行，浪漫周边满199返99" href="#" target="_blank">七夕没“礼”不行，浪漫周边满199返99 </a>
+                                </li>
+                                <li>
+                                    <span class="date">[07/18]</span>
+                                    <a href="#" target="_blank">
+                                        [活动]</a> <a title="浪漫七夕与你约“惠”，许愿赢好礼" href="# target="
+                                                    _blank">浪漫七夕与你约“惠”，许愿赢好礼 </a>
+                                </li>
+                            </ul>
+                            <ul style="float: left; width: 320px;">
+                                <li><span class="date">[09/22]</span><a href="#" target="_blank">[活动]我能想到的最拉风的事情，就是拥有这个了吧，哈哈哈哈哈哈哈哈！</a>
+                                </li>
+                                <li><span class="date">[09/20]</span><a href="#" target="_blank">[展示][我要上头条第5期]9月汇集各大服务器"电视"上实时幸运事件</a>
+                                </li>
+                                <li><span class="date">[09/26]</span><a href="#" target="_blank">[其他]不凡青春，超凡热爱——网易游戏运营中心2017校园招聘</a>
+                                </li>
+                                <li><span class="date">[09/27]</span><a href="#" target="_blank">[攻略]新倩女幽魂·一掌山河图（溪山行旅|风月宝鉴|江山如画）</a>
+                                </li>
+                                <li><span class="date">[09/12]</span><a href="#" target="_blank">[其他]【倩女任性第88期】洪荒之力/全能型项链/5大幅/合鬼秘诀/就是这么傲娇</a>
+                                </li>
+                                <li><span class="date">[04/26]</span><a href="#" target="_blank">[话题]关于老李飞刀事件的跟进-2</a>
+                                </li>
+                                <li><span class="date">[08/26]</span><a href="#" target="_blank">[活动]【有奖举报】恶意误导新手玩家的论坛回复将给予严厉处罚</a>
+                                </li>
+                                <li><span class="date">[09/20]</span><a href="#" target="_blank">[展示]【倩女任性第88期】
+                                    被30临幸/特殊坐骑/一BOSS出3鬼/逆天4致命/玲珑心会禄</a></li>
+
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="content-box clearfix" id="videobox">
+                <a href="#" target="_blank" class="more"><em>更多</em><i class="icon icon25"></i></a>
+
+                <div class="videobox-info">
+                    <div class="videobox-desc">
+                        <i class="icon icon27"></i><span>一笑倾城CG</span><i class="icon icon28"></i>
+                    </div>
+                    <div class="video"><img src="images/shipin.png"></div>
+                    <div class="video-btn"></div>
+                    <div class="videobox-hd">
+                        <ul>
+                            <li class="current">一笑倾城CG</li>
+                            <li>全新婚礼一条龙</li>
+                            <li>落霞峰美景</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="content-box clearfix" id="servicebox2">
+                <ul>
+                    <li>
+                        <p>让心与心的沟通更容易</p>
+
+                        <p><a href="#" target="_blank">点击进入首页</a></p>
+                    </li>
+                    <li>
+                        <p>0571-26201177<a class="btn" href="#" target="_blank">客服专区</a></p>
+
+                        <p><a href="#" target="_blank">点击登记您的帐号</a></p>
+                    </li>
+                    <li>
+                        <p>官方助手APP</p>
+
+                        <p><a href="#" target="_blank">进入小倩助手官网</a></p>
+                    </li>
+                </ul>
+            </div>
+            <div class="content-box" id="activitybox">
+                <div class="activity-list1">
+                    <ul class="adbase-ctn">
+                        <li><a href="#"><img src="images/hudong1.jpg"></a></li>
+                    </ul>
+                </div>
+                <div class="activity-list2 clearfix">
+                    <ul class="adbase-ctn">
+                        <li><a href="#"><img src="images/hudong2.jpg"></a></li>
+                        <li><a href="#"><img src="images/hudng3.jpg"></a></li>
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <!--主体结束-->
+    <!--遮罩-->
+    <div class="hdmask" id="hdmask" style="display: none;"></div>
+    <!--弹出页面-->
+    <div class="hdpop clearfix" id="regpop" style="display: none;">
+        <a class="hdpop-close" href="javascript:;" id="hdpop-close">关闭</a>
+
+        <div class="pop-box clearfix">
+
+
+            <div class="regpopbox pop-reg clearfix">
+                <div id="reg-fur" class="NIE-fur clearfix">
+                    <div class="fur-item-input fur-has-placeholder">
+                        <input class="fur-input" name="username" type="text" autocomplete="off" tabindex="101"
+                               id="inputname" value="请输入用户名">
+                        <input class="fur-input" name="password" type="text" autocomplete="off" tabindex="101"
+                               id="inputpasswd" value="请输入用户密码">
+
+                        <div class="fur-item fur-agree">
+                            <label>
+                                <input type="checkbox" checked="checked" disabled="disabled" class="fur-btn-agree"
+                                       tabindex="-1"> 我同意" 服务条款 "和" 隐私保护和个人信息利用政策 "</a>
+                            </label>
+                        </div>
+                        <div class="fur-item fur-submit">
+                            <button class="fur-btn fur-btn-submit" type="submit" tabindex="101"><span>立即注册</span>
+                            </button>
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <div class="regpop-down clearfix">
+                    <h5>极速<span>下载</span></h5>
+                    <a href="#" target="_blank" id="regpop-down1">极速下载</a>
+                    <a href="#" target="_blank" id="regpop-down2">普通下载</a>
+                </div>
+
+                <div class="regpop-gift">
+                    <a id="regpop-gift" href="#" rel="getcdkey">立即领取</a>
+                </div>
+            </div>
+
+        </div>
+        <div class="pop-tab clearfix">
+            <ul class="pop-tab-button clearfix" id="pop-tab-button">
+                <li><a href="javascript:void(0);" class="button-1 active">天降豪礼</a></li>
+                <li><a href="javascript:void(0);" class="button-2">点一点150</a></li>
+                <li><a href="javascript:void(0);" class="button-3">电视剧主题挂饰</a></li>
+                <li><a href="javascript:void(0);" class="button-4">赏落霞送发髻</a></li>
+                <li><a href="javascript:void(0);" class="button-5">结婚游行钜惠</a></li>
+            </ul>
+
+            <ul class="pop-tab-list clearfix" id="pop-tab-list">
+                <li class="active xuanzhongselected">
+                    <h3>天降豪礼三周 绝技珍稀坐骑送送送<b></b></h3>
+                    <img src="images/img1_c3c8132.jpg" class="list-img" alt="春江月圆泡泡坐骑">
+                    <h4>详情<b></b></h4>
+
+                    <div class="content-list">
+                        <ul>
+                            <li><b>活动时间：</b>2016年8月18日-9月3日 每周六晚20:00—22:00</li>
+                            <li><b>活动对象：</b>全区全服所有玩家</li>
+                            <li>
+                                <b>活动详情：</b>
+                                <span>（1）2016年8月18日至9月3日，等级≥50级的玩家，在线每隔10分钟即可获得一定数量的金叶子、银叶子、玉叶子，可分别在指定时间：8月20日20:00-22:00，8月27日20:00-22:00，9月3日20:00-22:00开启，开启叶子均有机会获得雪米团子、五色土、金刚钻等超值好礼！</span>
+                                <br>
+                                <span>8月18日/8月25日/9月01日 10:00—23:59 1枚金/银/玉叶子</span>
+                                <br>
+                                <span>8月19日/8月26日/9月02日 00:00—23:59 1枚金/银/玉叶子</span>
+                                <br>
+                                <span>8月20日/8月27日/9月03日 00:00—19:59 3枚金/银/玉叶子</span>
+                                <br>
+                                <span>（2）8月20日，8月27日，9月3日当晚20:00-22:00在线，可获得永久珍稀坐骑，各职业绝技，补天石，雪米团子，金刚钻，灵兽群攻技能书等超级大奖，还可100%获得以下奖励：</span>
+                                <br>
+                                <span>8月20日 20:00 天驰双人坐骑</span>
+                                <br>
+                                <span>8月27日 20:00 倾城传意（随机获得永久属性点1点）</span>
+                                <br>
+                                <span>8月27日 21:00 迷你仙君萌宠</span>
+                                <br>
+                                <span>9月03日 20:00 倾国传意（随机获得永久属性点1点）</span>
+                                <br>
+                                <span>9月03日 21:00 全新电视剧《微微一笑很倾城》主题时装——风华引</span>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+                <li class="huadongyichu">
+                    <h3>点点鼠标拿现金 最高150元<b></b></h3>
+                    <img src="images/img2_6395926.jpg" class="list-img" alt="杀BOSS爆现金">
+                    <h4>详情<b></b></h4>
+
+                    <div class="content-list">
+                        <ul>
+                            <li><b>活动时间：</b>2016年8月19日—9月18日</li>
+                            <li><b>活动对象：</b>在2016年8月19日后开启的新服创建的角色</li>
+                            <li>
+                                <b>活动详情：</b><span>活动期间，2016年8月19日之后新开服务器的少侠等级≥11、21、26、30级时可分别获得招财进宝小钱袋、和气生财小钱袋、花开富贵小钱袋、堆金迭玉小钱袋，内含至少60元（即6000元宝票），最多150元（15000元宝票）！</span><br>
+                                <span>领取小钱袋的玩家在达到30修为时，可以右键使用钱袋，获得一定的元宝票。修为每增进5级，即可使用一次钱袋获得元宝票，开完即止。</span><br>
+                                <span>获得元宝票的玩家，可以在商城元宝票专区进行消费。</span>
+                            </li>
+                        </ul>
+                        <h5>升级送888现金券</h5>
+                        <ul>
+                            <li><b>活动时间：</b>2016年8月19日-2016年9月18日</li>
+                            <li><b>活动对象：</b>在2016年8月19日后开启的新服创建的角色</li>
+                            <li>
+                                <b>活动详情：</b><span>在2016年8月19日新开服务器的少侠在2016年9月18日前达到一定等级，就可获得考拉海购发送的优惠券。</span><br>
+                                <span>优惠券数量有限，先到先得哦！</span><br>
+                                <span>领取成功后，可前往考拉海购官网点击进入，在“个人中心-我的优惠券”中查询已获得的优惠券，优惠多多，不容错过！</span>
+                                <br>
+                                <span>具体等级（10-90级）和对应券如下：</span>
+                                <br>
+                                <span>10：考拉海购10元无门槛优惠券</span>
+                                <br>
+                                <span>20：考拉海购满199元减20元优惠券+满299元减30元优惠券</span><br>
+                                <span>30：考拉海购满399元减40元优惠券+满499元减50元优惠券</span>
+                                <br>
+                                <span>60：考拉海购满1599元减150元优惠券</span>
+                                <br>
+                                <span>75：考拉海购满1999元减200元优惠券</span>
+                                <br>
+                                <span>90：考拉海购满2999元减288元优惠券</span>
+
+
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+
+                <li class="huadongyichu">
+                    <h3>一笑倾城主题挂饰：日常任务天天送<b></b></h3>
+                    <img src="images/img3_2c84b10.jpg" class="list-img" alt="9件绝版时装任选">
+                    <h4>详情<b></b></h4>
+
+                    <div class="content-list">
+                        <ul>
+                            <li><b>活动时间：</b>2016年8月19日-9月18日</li>
+                            <li><b>活动对象：</b>全区全服所有玩家</li>
+                            <li>
+                                <b>活动详情：</b><span>（1）参与湖中屋、照妖、桃花扇、捉鬼日常玩法时，击杀BOSS可获得物品——青羽；</span><br>
+                                <span>（2）集满2个青羽即可至四大主城寻找活动NPC神秘大神兑换超额奖励，奖励包括：五色土、金刚钻、十诫锦囊、高级吴山石鳞、传家宝碎片等，更有长歌清商、朱弦寄梦、晨风鸣林3款全新一笑倾城主题挂饰等你来拿。</span><br>
+                                <span>（3）活动期间， 8月19日/ 8月29日/ 9月8日的10点之后，神秘大神都将拿出新的奖励回馈各位玩家，给你更多的惊喜大礼！</span>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+
+                <li class="huadongyichu">
+                    <h3>赏落霞美景拿发簪 三界绝美定情信物<b></b></h3>
+                    <img src="images/img4_fd111b2.jpg" class="list-img" alt="888元电商券">
+                    <h4>详情<b></b></h4>
+
+                    <div class="content-list">
+                        <ul>
+                            <li><b>活动时间：</b>2016年8月19日-8月25日（包括8月19日新开的服务器）</li>
+                            <li><b>活动对象：</b>全区全服所有玩家</li>
+                            <li>
+                                <b>活动详情：</b><span>（1）夏日湿热难捱，等级≥30级的玩家可去全新蜜月场景落霞峰欣赏美景并采集甘草，然后制成甘草汁提交帮会福利总管刘天若(帮会城市,174,258)，帮助全体帮众清热解毒降肝火；</span><br>
+                                <span>（2）提交甘草汁至帮会活动NPC，不仅可以获得秘制帮贡丹奖励，还有机会获得三界绝美定情发簪——燕婉良时簪；
+</span><br><span>（3）活动结束前全帮提交甘草汁满60、120、180、240、300、360次，全体帮众可额外领取多个秘制帮贡丹等超值奖励；</span><br><span>说明：若入帮时间不足3天，则提交甘草汁的次数不计入帮会提交总次数。</span>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+
+                <li class="huadongyichu">
+                    <h3>浪漫新婚献礼 盛大游行享钜惠<b></b></h3>
+                    <img src="images/img5_0dd9591.jpg" class="list-img" alt="官方微信礼包">
+                    <h4>详情<b></b></h4>
+
+                    <div class="content-list">
+                        <ul>
+                            <li><b>活动时间：</b>2016年8月18日维护后-9月15日维护前</li>
+                            <li><b>活动对象：</b>全区全服所有玩家</li>
+                            <li>
+                                <b>活动详情：</b><span>（1）浪漫新婚享钜惠：活动时间内，商城结婚物品长相守锦袍，白头偕老，红玫瑰（具有全屏使用特效，高级红玫瑰（具有全屏使用特效），玫瑰花，烟花等道具可享受全场5折优惠；</span><br>
+                                <span>（2）你结婚我送礼：活动期间成功订亲的男方玩家可在NPC红线女(金陵,185,254)均可领取订亲礼盒一份，内含婚礼游行优惠券，红玫瑰（具有全屏使用特效），以及楠木漆金婚床，鸳鸯璧合囍字剪，洒线绣蹙金双囍大屏风等超值喜庆家具，让你享受最温情浪漫的婚礼。</span>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <!--弹窗结束-->
+    <!--尾部开始-->
+    <div id="bottomshare" style="display: block;">
+        <img src="images/bottom.png" alt=""/>
+    </div>
+</div>
+</body>
+</html>
