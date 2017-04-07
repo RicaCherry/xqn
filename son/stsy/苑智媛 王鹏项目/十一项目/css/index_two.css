@@ -1,0 +1,55 @@
+
+/*ÓÒÃæ¿ªÊ¼*/
+
+.right_total {
+    float: left;
+    height: 808px;
+    width: 919px;
+    padding-left: 80px;
+    /*background-color: red;*/
+}
+
+.right_total .video1{
+    width: 690px;
+    height: 428px;
+    margin-top: 196px;
+    /*background-color: peru;*/
+}
+
+
+
+
+.right_total .nav{
+    width: 525px;
+    height: 130px;
+    margin-top: 10px;
+    cursor: pointer;
+    /*background-color: indianred;*/
+}
+
+.right_total .nav .nav1{
+    width: 175px;
+    height: 130px;
+    float: left;
+    text-indent: -9999px;
+    display: inline-block;
+    background: url("../images/tese_btn.png") no-repeat 0px -130px;
+}
+
+.right_total .nav .nav2{
+    width: 175px;
+    height: 130px;
+    float: left;
+    text-indent: -9999px;
+    display: inline-block;
+    background: url("../images/tese_btn.png") no-repeat -175px 0px;
+}
+
+.right_total .nav .nav3{
+    width: 175px;
+    height: 130px;
+    float: left;
+    text-indent: -9999px;
+    display: inline-block;
+    background: url("../images/tese_btn.png") no-repeat -350px 0px;
+}

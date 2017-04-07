@@ -1,0 +1,93 @@
+.total {
+    background: url("../images/equip_bg.jpg");
+}
+
+/*Õº∆¨”Œœ∑ºÚΩÈ*/
+.right_content .equip_word {
+    position: absolute;
+    background: url(../images/equip_word.png) no-repeat;
+    text-indent: -9999px;
+    left: 252px;
+    top: 240px;
+    height: 205px;
+    width: 405px;
+}
+
+.right_content .equip_btn {
+    display: block;
+    background: url("../images/equip_btn.jpg");
+    position: absolute;
+    top: 751px;
+    height: 39px;
+}
+
+.right_content #equip_btn1 {
+    left: 258px;
+    width: 121px;
+    background-position: 0 0;
+}
+
+.right_content #equip_btn2 {
+    left: 384px;
+    width: 106px;
+    background-position: -126px -39px;
+}
+
+.right_content #equip_btn3 {
+    left: 495px;
+    width: 157px;
+    background-position: -237px -39px;
+}
+
+.right_content .equip_txt {
+    position: absolute;
+    left: 789px;
+    top: 764px;
+    font-size: 12px;
+    line-height: 16px;
+    font-family: "Microsoft YaHei";
+    color: #020202;
+}
+
+.right_txt {
+    width: 42px;
+    height: 480px;
+    position: absolute;
+    left: 752px;
+    top: 194px;
+    cursor: pointer;
+}
+
+.right_txt a {
+    width: 42px;
+    height: 60px;
+    display: block;
+    font-size: 22px;
+    line-height: 60px;
+    text-align: center;
+    color: #000;
+    font-family: "Microsoft YaHei";
+    position: absolute;
+    font-weight: bold;
+}
+
+.current333 {
+    background: url("../images/right_nav.png");
+}
+
+.right_content .right_img{
+    width: 403px;
+    height: 520px;
+    position: absolute;
+    left: 797px;
+    top: 165px;
+    /*background-color: #fff;*/
+}
+
+.right_img .right_wrap{
+    width: 403px;
+    height: 520px;
+    background: url("../images/0.jpg");
+}
+
+

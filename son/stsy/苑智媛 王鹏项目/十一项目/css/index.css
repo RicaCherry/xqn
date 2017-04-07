@@ -1,0 +1,201 @@
+/*总体轮廓*/
+/*<!--公共游戏栏-->*/
+.total {
+    height: 808px;
+    width: 1350px;
+    position: relative;
+    background: url("../images/feature_bg.jpg");
+}
+
+.total .left_total {
+    height: 808px;
+    width: 201px;
+    float: left;
+    background-color: #2F2F2F;
+}
+
+.total .left_total li {
+    width: 201px;
+    float: left;
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+/*精灵图设置*/
+.aside_t {
+    display: block;
+    width: 100%;
+    height: 70px;
+    background: url(../images/aside.png) no-repeat top;
+    /*overflow: hidden;*/
+}
+
+.left_total_nav #left_l0 {
+    height: 99px;
+    background-position: 0 0;
+    text-indent: -9999px;
+}
+
+.left_total_nav #left_l1 {
+    background-position: 0 -99px;
+    text-indent: -9999px;
+}
+
+.left_total_nav #left_l2 {
+    background-position: 0 -167px;
+    text-indent: -9999px;
+}
+
+.left_total_nav #left_l3 {
+    background-position: 0 -239px;
+    text-indent: -9999px;
+}
+
+.left_total_nav #left_l4 {
+    background-position: 0 -309px;
+    text-indent: -9999px;
+}
+
+.left_total_nav #left_l5 {
+    background-position: 0 -379px;
+    text-indent: -9999px;
+}
+
+.left_total_nav #left_l6 {
+    background-position: 0 -449px;
+    text-indent: -9999px;
+}
+
+.left_total_nav #left_l7 {
+    background-position: 0 -519px;
+    text-indent: -9999px;
+}
+
+.left_total_nav #left_l8 {
+    float: left;
+    height: 48px;
+    width: 91px;
+    color: #AA9666;
+    text-align: center;
+    font-size: 12px;
+    font-family: "宋体";
+    line-height: 53px;
+    background-position: 0 -589px;
+    padding: 5px 0 0 10px;
+}
+
+
+.left_total_nav #left_l9 {
+    float: left;
+    height: 48px;
+    width: 90px;
+    color: #AA9666;
+    text-align: center;
+    font-size: 12px;
+    font-family: "宋体";
+    line-height: 53px;
+    background-position: -100px -589px;
+    padding: 5px 0 0 10px;
+}
+/*公共脚部开始*/
+.footer {
+    height: 70px;
+    width: 1350px;
+    padding-top: 30px;
+    background-color: #212121;
+}
+
+.public-foot {
+    height: 65px;
+    margin-left: 180px;
+    /*background:pink;*/
+}
+
+.public-foot .foot-left {
+    width: 413px;
+    height: 43px;
+    display: inline-block;
+    /*background-color: yellow;*/
+}
+
+.foot-left a {
+    cursor: pointer;
+}
+
+.foot-left .foot-left-1 {
+    width: 118px;
+    height: 31px;
+    display: inline-block;
+    margin-top: 4px;
+    background: url("../images/netease.2.png") no-repeat;
+}
+
+.foot-left .foot-left-2 {
+    width: 134px;
+    height: 31px;
+    display: inline-block;
+    padding-right: 15px;
+    background: url("../images/nie.2.png") no-repeat;
+}
+
+.foot-left .foot-left-3 {
+    width: 39px;
+    height: 35px;
+    display: inline-block;
+    padding-right: 15px;
+    background: url("../images/leihuo.png") no-repeat;
+}
+
+.foot-left .foot-left-4 {
+    width: 31px;
+    height: 31px;
+    display: inline-block;
+    padding-right: 15px;
+    background: url("../images/wen.png") no-repeat;
+}
+
+.foot-left .foot-left-5 {
+    width: 31px;
+    height: 35px;
+    display: inline-block;
+    background: url("../images/wen2.png") no-repeat;
+}
+
+.public-foot .foot-right {
+    margin-left: 6px;
+    width: 450px;
+    height: 48px;
+    text-align:left;
+    display: inline-block;
+    /*background-color: magenta;*/
+}
+
+.foot-right-top a {
+    font-size: 12px;
+    height: 24px;
+    display: inline-block;
+    font-family: '宋体';
+    color: #fff;
+}
+
+.foot-right .foot-right-btn{
+    font-size: 12px;
+    height: 24px;
+    display: inline-block;
+    font-family: '宋体';
+    color: #fff;
+}
+
+.foot-right-end {
+    width: 142px;
+    height: 28px;
+    font-size: 12px;
+    line-height: 28px;
+    color: #fff;
+    display: inline-block;
+    font-family: '宋体';
+    /*background-color:darkred;*/
+}
+
+
